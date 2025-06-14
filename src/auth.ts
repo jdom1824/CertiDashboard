@@ -59,7 +59,7 @@ const sessionsHandler: RequestHandler = (req, res) => {
   const sessions = Array.from(activeSessions.entries()).map(([username, loginDate]) => ({ username, loginDate }));
   res.status(200).json({ sessions });
 };
-router.post('/sessions', sessionsHandler);
+router.get('/sessions', sessionsHandler);
 
 // GET /auth/logout
 const logoutHandler: RequestHandler = (_req, res) => {
